@@ -16,16 +16,17 @@ int main()
 		int selection;
 		double num1, num2;
 
-		cout << "C++ Calculator" << endl
-			<< endl
-			<< "Please choose one of the following options:" << endl
-			<< "1. Addition" << endl
-			<< "2. Subtraction" << endl
-			<< "3. Multiplication" << endl
-			<< "4. Division" << endl
-			<< "5. Trig Functions" << endl
-			<< "6. Logs/exponentials" << endl
-			<< "7. Square root" << endl;
+		cout <<"                C++ Calculator                " << endl
+			<< " ____________________________________________" << endl
+			<< "|Please choose one of the following options: |" << endl
+			<< "|1. Addition                                 |" << endl
+			<< "|2. Subtraction                              |" << endl
+			<< "|3. Multiplication                           |" << endl
+			<< "|4. Division                                 |" << endl
+			<< "|5. Trig Functions                           |" << endl
+			<< "|6. Logs/exponentials                        |" << endl
+			<< "|7. Square root                              |" << endl
+			<< "|____________________________________________|" << endl;
 		cin >> selection;
 		switch (selection) // Menu Selection
 		{
