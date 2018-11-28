@@ -6,8 +6,8 @@ void addition(double, double);
 void subtraction(double, double);
 void multiplication(double, double);
 void division(double, double);
-void squareRoot(double);
 void trig();
+void expslogs();
 
 int main()
 {
@@ -49,11 +49,9 @@ int main()
 			break;
 		case 5: trig();
 			break;
-		case 8: cout << "filler";
+		case 6: expslogs();
 			break;
-		case 7: cout << "Please enter a number: " << endl;
-			cin >> num1;
-			squareRoot(num1);
+		case 7: cout << "filler";
 			break;
 		default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
 			cin >> selection;
@@ -78,12 +76,6 @@ void multiplication(double a, double b)
 void division(double a, double b)
 {
 	cout << a << " / " << b << " = " << a / b << endl; // Divides two numbers
-}
-void squareRoot(double a) //Square root of a number
-{
-	double sqroot;
-	sqroot = sqrt(a);
-	cout << "The square root of " << a << " is " << sqroot << endl;
 }
 // This Function holds the trig menu and tools to solve trig funtions
 void trig()
@@ -130,6 +122,26 @@ void trig()
 		cin >> selectionTrig;
 
 	}
-
-
+}
+void expslogs()
+{
+	cout << "Welcome to the logs and exponents menu! Please choose one of the following options:" << endl
+		<< "1. Log(x)" << endl
+		<< "2. ln(x)" << endl
+		<< "3. e^(x)" << endl
+		<< "4. (b)^(x)" << endl;
+	int selectionLE;
+	cin >> selectionLE;
+	switch (selectionLE)
+	{
+	case 1: cout << "filler" << endl;
+		break;
+	case 2: cout << "filler" << endl;
+		break;
+	case 3: cout << "filler" << endl;
+		break;
+	case 4: cout << "filler" << endl;
+		break;
+	default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
+	}
 }
