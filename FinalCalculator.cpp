@@ -94,27 +94,27 @@ void trig()
 	cin >> selectionTrig;
 	switch (selectionTrig)
 	{
-	case 1: cout << "Please enter a number to find the sin of:" << endl; // Case 1 is for sine
+	case 1: cout << "Please enter a number to find the sin of: "; // Case 1 is for sine
 		cin >> num;
 		cout << "sin(" << num << ") = " << sin((num*pi) / 180) << endl;
 		break;
-	case 2: cout << "Please enter a number to find the cos of:" << endl; // Case 2 is for cos
+	case 2: cout << "Please enter a number to find the cos of: "; // Case 2 is for cos
 		cin >> num;
 		cout << "cos(" << num << ") = " << cos((num*pi) / 180) << endl;
 		break;
-	case 3:cout << "Please enter a number to find the tan of:" << endl; // Case 3 is for tan
+	case 3:cout << "Please enter a number to find the tan of: "; // Case 3 is for tan
 		cin >> num;
 		cout << "tan(" << num << ") = " << tan((num*pi) / 180) << endl;
 		break;
-	case 4:cout << "Please enter a number to find the csc of:" << endl; // Case 4 is for csc
+	case 4:cout << "Please enter a number to find the csc of: "; // Case 4 is for csc
 		cin >> num;
 		cout << "csc(" << num << ") = " << 1 / (sin((num*pi) / 180)) << endl;
 		break;
-	case 5:cout << "Please enter a number to find the sec of:" << endl; // Case 5 is for sec
+	case 5:cout << "Please enter a number to find the sec of: "; // Case 5 is for sec
 		cin >> num;
 		cout << "sec(" << num << ") = " << 1 / (cos((num*pi) / 180)) << endl;
 		break;
-	case 6:cout << "Please enter a number to find the cot of:" << endl; // Case 5 is for cot
+	case 6:cout << "Please enter a number to find the cot of: "; // Case 5 is for cot
 		cin >> num;
 		cout << "cot(" << num << ") = " << 1 / (tan((num*pi) / 180)) << endl;
 		break;
@@ -131,12 +131,17 @@ void expslogs()
 		<< "3. e^(x)" << endl
 		<< "4. (b)^(x)" << endl;
 	int selectionLE;
+	double num;
 	cin >> selectionLE;
 	switch (selectionLE)
 	{
-	case 1: cout << "filler" << endl;
+	case 1: cout << "Please enter a number to find the log of: ";
+		cin >> num;
+		cout << "log(" << num << ") = " << log10(num) << endl;
 		break;
-	case 2: cout << "filler" << endl;
+	case 2: cout << "Please enter a number to find the ln of: ";
+		cin >> num;
+		cout << "ln(" << num << ") = " << log(num) << endl;
 		break;
 	case 3: cout << "filler" << endl;
 		break;
