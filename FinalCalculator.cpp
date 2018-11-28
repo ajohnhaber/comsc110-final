@@ -6,6 +6,7 @@ void addition(double, double);
 void subtraction(double, double);
 void multiplication(double, double);
 void division(double, double);
+void squareRoot(double);
 void trig();
 
 int main()
@@ -16,7 +17,7 @@ int main()
 		int selection;
 		double num1, num2;
 
-		cout <<"                C++ Calculator                " << endl
+		cout << "                C++ Calculator                " << endl
 			<< " ____________________________________________" << endl
 			<< "|Please choose one of the following options: |" << endl
 			<< "|1. Addition                                 |" << endl
@@ -50,7 +51,9 @@ int main()
 			break;
 		case 8: cout << "filler";
 			break;
-		case 7: cout << "filler";
+		case 7: cout << "Please enter a number: " << endl;
+			cin >> num1;
+			squareRoot(num1);
 			break;
 		default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
 			cin >> selection;
@@ -75,6 +78,12 @@ void multiplication(double a, double b)
 void division(double a, double b)
 {
 	cout << a << " / " << b << " = " << a / b << endl; // Divides two numbers
+}
+void squareRoot(double a) //Square root of a number
+{
+	double sqroot;
+	sqroot = sqrt(a);
+	cout << "The square root of " << a << " is " << sqroot << endl;
 }
 // This Function holds the trig menu and tools to solve trig funtions
 void trig()
@@ -121,5 +130,6 @@ void trig()
 		cin >> selectionTrig;
 
 	}
+
 
 }
