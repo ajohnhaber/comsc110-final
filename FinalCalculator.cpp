@@ -7,6 +7,7 @@ void subtraction(double, double);
 void multiplication(double, double);
 void division(double, double);
 void trig();
+void squareRoot(double);
 void expslogs();
 
 int main()
@@ -27,7 +28,8 @@ int main()
 			<< "|5. Trig Functions                           |" << endl
 			<< "|6. Logs/exponentials                        |" << endl
 			<< "|7. Square root                              |" << endl
-			<< "|____________________________________________|" << endl;
+			<< "|____________________________________________|" << endl
+			<< "Selection: ";
 		cin >> selection;
 		switch (selection) // Menu Selection
 		{
@@ -51,7 +53,9 @@ int main()
 			break;
 		case 6: expslogs();
 			break;
-		case 7: cout << "filler";
+		case 7: cout << "Please enter a number: " << endl;
+			cin >> num1;
+			squareRoot(num1);
 			break;
 		default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
 			cin >> selection;
@@ -77,6 +81,12 @@ void division(double a, double b)
 {
 	cout << a << " / " << b << " = " << a / b << endl; // Divides two numbers
 }
+void squareRoot(double a) //Square root of a number
+{
+	double sqroot;
+	sqroot = sqrt(a);
+	cout << "The square root of " << a << " is " << sqroot << endl;
+}
 // This Function holds the trig menu and tools to solve trig funtions
 void trig()
 {
@@ -84,13 +94,17 @@ void trig()
 	double num;
 	double pi = 3.141592653589; // Defining PI so that the inputs/outputs are in degrees
 
-	cout << "Welcome to the trig menu! Please choose one of the following options:" << endl // Outputs trig menu options 
-		<< "1. sin" << endl
-		<< "2. cos" << endl
-		<< "3. tan" << endl
-		<< "4. csc" << endl
-		<< "5. sec" << endl
-		<< "6. cot" << endl;
+   cout << " ____________________________________________" << endl;
+   cout << "|Welcome to the trig menu!                   |" << endl
+	   << "|Please choose one of the following options: |" << endl // Outputs trig menu options 
+	   << "|1. sin                                      |" << endl
+	   << "|2. cos                                      |" << endl
+	   << "|3. tan                                      |" << endl
+	   << "|4. csc                                      |" << endl
+	   << "|5. sec                                      |" << endl
+	   << "|6. cot                                      |" << endl
+	   << "|____________________________________________|" << endl;
+   cout << "Selection: ";
 	cin >> selectionTrig;
 	switch (selectionTrig)
 	{
