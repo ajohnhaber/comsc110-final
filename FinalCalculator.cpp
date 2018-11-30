@@ -33,19 +33,19 @@ int main()
 		cin >> selection;
 		switch (selection) // Menu Selection
 		{
-		case 1: cout << "Please enter two numbers to add each seperated by a space:" << endl;
+		case 1: cout << "Please enter two numbers to add each seperated by a space: ";
 			cin >> num1 >> num2;
 			addition(num1, num2); // Sends two numbers to addition function
 			break;
-		case 2: cout << "Please enter two numbers to subtract each seperated by a space:" << endl;
+		case 2: cout << "Please enter two numbers to subtract each seperated by a space: ";
 			cin >> num1 >> num2;
 			subtraction(num1, num2); // Sends two numbers to subtraction function
 			break;
-		case 3: cout << "Please enter two numbers to multiply each seperated by a space:" << endl;
+		case 3: cout << "Please enter two numbers to multiply each seperated by a space: ";
 			cin >> num1 >> num2;
 			multiplication(num1, num2); // Sends two numbers to multiplication function
 			break;
-		case 4: cout << "Please enter two numbers to divide each seperated by a space:" << endl;
+		case 4: cout << "Please enter two numbers to divide each seperated by a space: ";
 			cin >> num1 >> num2;
 			division(num1, num2); // Sends two numbers to division function
 			break;
@@ -139,11 +139,15 @@ void trig()
 }
 void expslogs()
 {
-	cout << "Welcome to the logs and exponents menu! Please choose one of the following options:" << endl
-		<< "1. Log(x)" << endl
-		<< "2. ln(x)" << endl
-		<< "3. e^(x)" << endl
-		<< "4. (b)^(x)" << endl;
+	cout << " ____________________________________________" << endl;
+	cout <<"|Welcome to the logs and exponents menu!     |" << endl
+		<< "|Please choose one of the following options: |" << endl
+		<< "|1. Log(x)                                   |" << endl
+		<< "|2. ln(x)                                    |" << endl
+		<< "|3. e^(x)                                    |" << endl
+		<< "|4. (b)^(x)                                  |" << endl
+		<< "|____________________________________________|" << endl;
+	cout << "Selection: ";
 	int selectionLE;
 	double num;
 	cin >> selectionLE;
