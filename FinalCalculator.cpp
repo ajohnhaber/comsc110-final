@@ -2,12 +2,12 @@
 #include <cmath>
 using namespace std;
 
-void addition(double, double);
-void subtraction(double, double);
-void multiplication(double, double);
-void division(double, double);
+void addition();
+void subtraction();
+void multiplication();
+void division();
 void trig();
-void squareRoot(double);
+void squareRoot();
 void expslogs();
 
 int main()
@@ -33,29 +33,24 @@ int main()
 		cin >> selection;
 		switch (selection) // Menu Selection
 		{
-		case 1: cout << "Please enter two numbers to add each seperated by a space: ";
-			cin >> num1 >> num2;
-			addition(num1, num2); // Sends two numbers to addition function
+		case 1: cout << "Please input numbers to add together each seperated by enter and when done input 0: " << endl;
+			addition(); 
 			break;
-		case 2: cout << "Please enter two numbers to subtract each seperated by a space: ";
-			cin >> num1 >> num2;
-			subtraction(num1, num2); // Sends two numbers to subtraction function
+		case 2: cout << "Please input numbers to subtract from eachother each seperated by enter and when done input 0: " << endl;
+			subtraction();
 			break;
-		case 3: cout << "Please enter two numbers to multiply each seperated by a space: ";
-			cin >> num1 >> num2;
-			multiplication(num1, num2); // Sends two numbers to multiplication function
+		case 3: cout << "Please input numbers to multiply by eachother each seperated by enter and when done input 1: " << endl;
+			multiplication(); 
 			break;
-		case 4: cout << "Please enter two numbers to divide each seperated by a space: ";
-			cin >> num1 >> num2;
-			division(num1, num2); // Sends two numbers to division function
+		case 4: cout << "Please input numbers to divide by eachother each seperated by enter and when done input 1: " << endl;
+			division(); 
 			break;
 		case 5: trig();
 			break;
 		case 6: expslogs();
 			break;
-		case 7: cout << "Please enter a number: " << endl;
-			cin >> num1;
-			squareRoot(num1);
+		case 7: cout << "Please enter a number to find the square root of: ";
+			squareRoot();
 			break;
 		default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
 			cin >> selection;
@@ -65,27 +60,75 @@ int main()
 	}
 }
 
-void addition(double a, double b)
+void addition()
 {
-	cout << a << " + " << b << " = " << a + b << endl; // Adds two numbers
+	double num;
+	double total;
+
+	cin >> total;
+	do
+	{
+		cin >> num;
+		total = total + num;
+	} while (num != 0);
+	cout << "= " << total << endl;
 }
-void subtraction(double a, double b)
+void subtraction()
 {
-	cout << a << " - " << b << " = " << a - b << endl; // Subtracts two numbers
+	double num;
+	double total;
+
+	cin >> total;
+	do
+	{
+		cin >> num;
+		total = total - num;
+	} while (num != 0);
+	cout << "= " << total << endl;
 }
-void multiplication(double a, double b)
+void multiplication()
 {
-	cout << a << " * " << b << " = " << a * b << endl; // Multiplies two numbers
+	double num;
+	double total;
+
+	cin >> total;
+	do
+	{
+		cin >> num;
+		total = total * num;
+	} while (num != 1);
+	cout << "= " << total << endl;
 }
-void division(double a, double b)
+void division()
 {
-	cout << a << " / " << b << " = " << a / b << endl; // Divides two numbers
+	double num;
+	double total;
+
+	cin >> total;
+	do
+	{
+		cin >> num;
+		total = total / num;
+	} while (num != 1);
+	cout << "= " << total << endl;
 }
-void squareRoot(double a) //Square root of a number
+void squareRoot() //Square root of a number
 {
+	double num;
 	double sqroot;
-	sqroot = sqrt(a);
-	cout << "The square root of " << a << " is " << sqroot << endl;
+	cin >> num;
+	double num1 = num;
+	if (num >= 0)
+	{
+		sqroot = sqrt(num);
+		cout << "The square root of " << num1 << " = " << sqroot << endl;
+	}
+	if (num < 0)
+	{
+		num = abs(num);
+		sqroot = sqrt(num);
+		cout << "The square root of " << num1 << " = " << sqroot << "i" << endl;
+	}
 }
 // This Function holds the trig menu and tools to solve trig funtions
 void trig()
@@ -149,7 +192,7 @@ void expslogs()
 		<< "|____________________________________________|" << endl;
 	cout << "Selection: ";
 	int selectionLE;
-	double num;
+	double num, num1;
 	cin >> selectionLE;
 	switch (selectionLE)
 	{
@@ -161,9 +204,13 @@ void expslogs()
 		cin >> num;
 		cout << "ln(" << num << ") = " << log(num) << endl;
 		break;
-	case 3: cout << "filler" << endl;
+	case 3: cout << "Please enter a number for x in e^(x): ";
+		cin >> num;
+		cout << "e^(" << num << ") = " << exp(num) << endl;
 		break;
-	case 4: cout << "filler" << endl;
+	case 4: cout << "Please enter a number for b and x in (b)^(x) each seperated by a space: ";
+		cin >> num >> num1;
+		cout << "(" << num << ")^" << "(" << num1 << ") = " << pow(num, num1) << endl;
 		break;
 	default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
 	}
