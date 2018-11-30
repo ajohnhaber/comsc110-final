@@ -1,8 +1,13 @@
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <array>
 using namespace std;
 
-void addition(double, double);
+
+//http://www.cplusplus.com/reference/array/array/size/
+
+//void addition(double, double);
 void subtraction(double, double);
 void multiplication(double, double);
 void division(double, double);
@@ -33,19 +38,32 @@ int main()
 		cin >> selection;
 		switch (selection) // Menu Selection
 		{
-		case 1: cout << "Please enter two numbers to add each seperated by a space: ";
-			cin >> num1 >> num2;
-			addition(num1, num2); // Sends two numbers to addition function
-			break;
-		case 2: cout << "Please enter two numbers to subtract each seperated by a space: ";
+		case 1: cout << "Please enter at least two numbers to add each seperated by a space:" << endl;
+		{
+			int n;
+			int result = 0;
+			int addition[] = { 0, 5, 5, 10 };
+			
+			cout << addition.size() << endl;
+
+			for (n = 0; n < sizeof(addition); n++)
+			{
+				result = result + addition[n];
+				
+			}
+			cout << result << endl; 
+			
+		}break;
+		case 2: cout << "Please enter two numbers to subtract each seperated by a space:" << endl;
+
 			cin >> num1 >> num2;
 			subtraction(num1, num2); // Sends two numbers to subtraction function
 			break;
-		case 3: cout << "Please enter two numbers to multiply each seperated by a space: ";
+		case 3: cout << "Please enter two numbers to multiply each seperated by a space:" << endl;
 			cin >> num1 >> num2;
 			multiplication(num1, num2); // Sends two numbers to multiplication function
 			break;
-		case 4: cout << "Please enter two numbers to divide each seperated by a space: ";
+		case 4: cout << "Please enter two numbers to divide each seperated by a space:" << endl;
 			cin >> num1 >> num2;
 			division(num1, num2); // Sends two numbers to division function
 			break;
@@ -65,10 +83,16 @@ int main()
 	}
 }
 
-void addition(double a, double b)
-{
-	cout << a << " + " << b << " = " << a + b << endl; // Adds two numbers
-}
+//void addition(double a, double b)
+//{
+//	int addition[] = { 0 };
+//	cout << "Enter integers('x' to stop";
+//	for (int i = 0; i < 100 || addition[i] == x; x++)
+//	{
+//		cin >> addition[i];
+//
+//	}
+//}
 void subtraction(double a, double b)
 {
 	cout << a << " - " << b << " = " << a - b << endl; // Subtracts two numbers
@@ -139,15 +163,11 @@ void trig()
 }
 void expslogs()
 {
-	cout << " ____________________________________________" << endl;
-	cout <<"|Welcome to the logs and exponents menu!     |" << endl
-		<< "|Please choose one of the following options: |" << endl
-		<< "|1. Log(x)                                   |" << endl
-		<< "|2. ln(x)                                    |" << endl
-		<< "|3. e^(x)                                    |" << endl
-		<< "|4. (b)^(x)                                  |" << endl
-		<< "|____________________________________________|" << endl;
-	cout << "Selection: ";
+	cout << "Welcome to the logs and exponents menu! Please choose one of the following options:" << endl
+		<< "1. Log(x)" << endl
+		<< "2. ln(x)" << endl
+		<< "3. e^(x)" << endl
+		<< "4. (b)^(x)" << endl;
 	int selectionLE;
 	double num;
 	cin >> selectionLE;
