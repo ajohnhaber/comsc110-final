@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
-#include <algorithm>
 #include <numeric>
+
 using namespace std;
 
 void addition();
@@ -14,8 +14,8 @@ void squareRoot();
 void expslogs();
 
 vector<double> add;
-vector<double> sub;
-vector<double> mult;
+vector<long long int> sub;
+vector<int> mult;
 vector<double> divi;
 
 int main()
@@ -41,16 +41,16 @@ int main()
 		cin >> selection;
 		switch (selection) // Menu Selection
 		{
-		case 1: cout << "Please input numbers to add together each seperated by enter and when done input 0: " << endl;
+		case 1: cout << " " << endl;
 			addition(); 
 			break;
-		case 2: cout << "Please input numbers to subtract from eachother each seperated by enter and when done input 0: " << endl;
+		case 2: cout << " " << endl;
 			subtraction();
 			break;
-		case 3: cout << "Please input numbers to multiply by eachother each seperated by enter and when done input 1: " << endl;
+		case 3: cout << " " << endl;
 			multiplication(); 
 			break;
-		case 4: cout << "Please input numbers to divide by eachother each seperated by enter and when done input 1: " << endl;
+		case 4: cout << "Please input numbers to divide by each other each separated by enter and when done input 1: " << endl;
 			division(); 
 			break;
 		case 5: trig();
@@ -73,54 +73,68 @@ void addition()
 	long double num;
 	long double max;
 
-	cout << "How many numbers do you want to add? : ";
+	cout << "How many numbers do you want to add? : "; //Prompts user for the number of values they want to add
 	cin >> max;
 
-	cout << "Enter the numbers, each seperated by enter: " << endl;
-	for (long double i = 0; i < max; i++)
+	cout << "Enter " << max << " numbers, each separated by enter: " << endl; //Loops the input prompt for the exact amount of numbers the user wants to add. Inputs values into vector
+	for (long double i = 0; i < max; i++) 
 	{
 		cin >> num;
 		add.push_back(num);
-	}
+	} 
 
 	
-	long double sum = 0; for (int i = 0; i < add.size(); i++) sum += add[i];
+	long long int sum = 0; for (int i = 0; i < add.size(); i++) sum += add[i]; //Adds all numbers in the vector together
 
-	cout << "Sum: " << sum << endl;
+	cout << "Sum: " << sum << endl; //Outputs the sum
 
 }
 void subtraction()
 {
-	long double num;
-	long double max;
+	long long int num;
+	long long int max;
+	long long int firstNum;
 
-	cout << "How many numbers do you want to subtract? : ";
+	cout << "What is the number you want to subtract from? :";
+	cin >> firstNum;
+
+	cout << "How many numbers do you want to subtract from " << firstNum << "? :"; //Prompts user for the number of values they want to subtract
 	cin >> max;
 
-	cout << "Enter the numbers, each seperated by enter: " << endl;
-	for (long double i = 0; i < max; i++)
+	cout << "Enter " << max << " numbers, each separated by enter: " << endl; //Loops the input prompt for the exact amount of numbers the user wants to subtract. Inputs values into vector
+	for (long long int i = 0; i < max; i++)
 	{
 		cin >> num;
-		sub.push_back(num);
+		sub.push_back(num); 
 	}
 
 
-	long double sum = 0; for (int i = 0; i < sub.size(); i++) sum -= sub[i];
+	long long int sum = 0; for (int i = 0; i < sub.size(); i++) sum += sub[i];
 
-	cout << "Sum: " << sum << endl;
+	cout << "Sum: " << firstNum - sum << endl; //Subtracts 
 }
 void multiplication()
 {
-	double num;
-	double total;
+	int num;
+	int valChoice;
 
-	cin >> total;
-	do
+	cout << "How many numbers do you want to multiply? : "; //Prompts the user for the number of values they want to multiply together
+	cin >> valChoice;
+
+	cout << "Enter " <<  valChoice << " numbers, each separated by enter: " << endl;
+	for (int i = 0; i < valChoice; i++) //Prompts user for the numbers they want to multiply
 	{
 		cin >> num;
-		total = total * num;
-	} while (num != 1);
-	cout << "= " << total << endl;
+		mult.push_back(num);
+	}	
+
+	int sum = 1; for (int i = 0; (i < mult.size()-1); i++) //Multiplies all values in the vector together
+	{
+		num *= mult[i];
+	}
+
+	cout << "Sum: " << num << endl; //Outputs the result
+
 }
 void division()
 {
