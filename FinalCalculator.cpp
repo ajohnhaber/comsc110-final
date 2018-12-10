@@ -42,26 +42,26 @@ int main()
 		switch (selection) // Menu Selection ----> sends to selected function
 		{
 		case 1: cout << " " << endl;
-			addition();
+			addition(); // Sends to addition function
 			break;
 		case 2: cout << " " << endl;
-			subtraction();
+			subtraction(); // Sends to subtraction fuction
 			break;
 		case 3: cout << " " << endl;
-			multiplication();
+			multiplication(); // Sends to multiplication function
 			break;
 		case 4: cout << endl << "Please input numbers to divide by each other each separated by enter and when done input 1: " << endl;
-			division();
+			division(); // Sends to division function
 			break;
-		case 5: trig();
+		case 5: trig(); // Sends to trig function
 			break;
-		case 6: expslogs();
+		case 6: expslogs(); // Sends to exponents and logs function
 			break;
 		case 7: cout << "Please enter a number to find the square root of: ";
-			squareRoot();
+			squareRoot(); // Sends to sqaure root function
 			break;
 		default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
-			cin >> selection;
+			cin >> selection; // Allows the user to retry input
 		}
 		cout << "Would you like to return to the main menu? y or n" << endl;
 		cin >> repeat;
@@ -235,19 +235,19 @@ void expslogs()
 	{
 	case 1: cout << "Please enter a number to find the log of: ";
 		cin >> num;
-		cout << "log(" << num << ") = " << log10(num) << endl;
+		cout << "log(" << num << ") = " << log10(num) << endl; // Finds the common log of a number
 		break;
 	case 2: cout << "Please enter a number to find the ln of: ";
 		cin >> num;
-		cout << "ln(" << num << ") = " << log(num) << endl;
+		cout << "ln(" << num << ") = " << log(num) << endl; // Finds the natural log of a number
 		break;
 	case 3: cout << "Please enter a number for x in e^(x): ";
 		cin >> num;
-		cout << "e^(" << num << ") = " << exp(num) << endl;
+		cout << "e^(" << num << ") = " << exp(num) << endl; // Finds e to the power of a number
 		break;
 	case 4: cout << "Please enter a number for b and x in (b)^(x) each seperated by a space: ";
 		cin >> num >> num1;
-		cout << "(" << num << ")^" << "(" << num1 << ") = " << pow(num, num1) << endl;
+		cout << "(" << num << ")^" << "(" << num1 << ") = " << pow(num, num1) << endl; // Lets the user define the exponent and base
 		break;
 	default: cout << "INVALID INPUT! PLEASE TRY AGAIN" << endl; // Tells the user input was not a valid menu option
 	}
