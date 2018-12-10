@@ -1,14 +1,22 @@
 #include <iostream>
-#include <cmath>
+#include <cmath> // Allows for more mathmatic tools
+#include <vector>
+#include <numeric>
+
 using namespace std;
 
-void addition();
+void addition(); // These are the functions for all the funtions of the calculator
 void subtraction();
 void multiplication();
 void division();
 void trig();
 void squareRoot();
 void expslogs();
+
+vector<double> add; // Used to add/subtract/multiply multiple numbers
+vector<long long int> sub;
+vector<int> mult;
+vector<double> divi;
 
 int main()
 {
@@ -18,7 +26,7 @@ int main()
 		int selection;
 		double num1, num2;
 
-		cout << "                C++ Calculator                " << endl
+		cout << "                C++ Calculator                " << endl // Basic UI
 			<< " ____________________________________________" << endl
 			<< "|Please choose one of the following options: |" << endl
 			<< "|1. Addition                                 |" << endl
@@ -31,19 +39,19 @@ int main()
 			<< "|____________________________________________|" << endl
 			<< "Selection: ";
 		cin >> selection;
-		switch (selection) // Menu Selection
+		switch (selection) // Menu Selection ----> sends to selected function
 		{
-		case 1: cout << "Please input numbers to add together each seperated by enter and when done input 0: " << endl;
-			addition(); 
+		case 1: cout << " " << endl;
+			addition();
 			break;
-		case 2: cout << "Please input numbers to subtract from eachother each seperated by enter and when done input 0: " << endl;
+		case 2: cout << " " << endl;
 			subtraction();
 			break;
-		case 3: cout << "Please input numbers to multiply by eachother each seperated by enter and when done input 1: " << endl;
-			multiplication(); 
+		case 3: cout << " " << endl;
+			multiplication();
 			break;
-		case 4: cout << "Please input numbers to divide by eachother each seperated by enter and when done input 1: " << endl;
-			division(); 
+		case 4: cout << endl << "Please input numbers to divide by each other each separated by enter and when done input 1: " << endl;
+			division();
 			break;
 		case 5: trig();
 			break;
@@ -62,54 +70,83 @@ int main()
 
 void addition()
 {
-	double num;
-	double total;
+	long double num;
+	long double max;
 
-	cin >> total;
-	do
+	cout << "How many numbers do you want to add? : "; //Prompts user for the number of values they want to add
+	cin >> max;
+
+	cout << "Enter " << max << " numbers, each separated by enter: " << endl; //Loops the input prompt for the exact amount of numbers the user wants to add. Inputs values into vector
+	for (long double i = 0; i < max; i++)
 	{
 		cin >> num;
-		total = total + num;
-	} while (num != 0);
-	cout << "= " << total << endl;
+		add.push_back(num);
+	}
+
+
+	long long int sum = 0; for (int i = 0; i < add.size(); i++) sum += add[i]; //Adds all numbers in the vector together
+
+	cout << "Sum: " << sum << endl; //Outputs the sum
+
 }
 void subtraction()
 {
-	double num;
-	double total;
+	long long int num;
+	long long int max;
+	long long int firstNum;
 
-	cin >> total;
-	do
+	cout << "What is the number you want to subtract from? :";
+	cin >> firstNum;
+
+	cout << "How many numbers do you want to subtract from " << firstNum << "? :"; //Prompts user for the number of values they want to subtract
+	cin >> max;
+
+	cout << "Enter " << max << " numbers, each separated by enter: " << endl; //Loops the input prompt for the exact amount of numbers the user wants to subtract. Inputs values into vector
+	for (long long int i = 0; i < max; i++)
 	{
 		cin >> num;
-		total = total - num;
-	} while (num != 0);
-	cout << "= " << total << endl;
+		sub.push_back(num);
+	}
+
+
+	long long int sum = 0; for (int i = 0; i < sub.size(); i++) sum += sub[i];
+
+	cout << "Sum: " << firstNum - sum << endl; //Subtracts 
 }
 void multiplication()
 {
-	double num;
-	double total;
+	int num;
+	int valChoice;
 
-	cin >> total;
-	do
+	cout << "How many numbers do you want to multiply? : "; //Prompts the user for the number of values they want to multiply together
+	cin >> valChoice;
+
+	cout << "Enter " << valChoice << " numbers, each separated by enter: " << endl;
+	for (int i = 0; i < valChoice; i++) //Prompts user for the numbers they want to multiply
 	{
 		cin >> num;
-		total = total * num;
-	} while (num != 1);
-	cout << "= " << total << endl;
+		mult.push_back(num);
+	}
+
+	int sum = 1; for (int i = 0; (i < mult.size() - 1); i++) //Multiplies all values in the vector together
+	{
+		num *= mult[i];
+	}
+
+	cout << "Sum: " << num << endl; //Outputs the result
+
 }
 void division()
 {
 	double num;
 	double total;
 
-	cin >> total;
+	cin >> total; // Makes the first input the total to divide from
 	do
 	{
-		cin >> num;
+		cin >> num; // The following are the numbers divided
 		total = total / num;
-	} while (num != 1);
+	} while (num != 1); // 1 is used to break out of the do/while loop
 	cout << "= " << total << endl;
 }
 void squareRoot() //Square root of a number
@@ -118,12 +155,12 @@ void squareRoot() //Square root of a number
 	double sqroot;
 	cin >> num;
 	double num1 = num;
-	if (num >= 0)
+	if (num >= 0) // If the number is positive it finds the square root and outputs it
 	{
 		sqroot = sqrt(num);
 		cout << "The square root of " << num1 << " = " << sqroot << endl;
 	}
-	if (num < 0)
+	if (num < 0) // If its less than 0 it gets the absolute value first so that it can find the square root
 	{
 		num = abs(num);
 		sqroot = sqrt(num);
@@ -137,19 +174,19 @@ void trig()
 	double num;
 	double pi = 3.141592653589; // Defining PI so that the inputs/outputs are in degrees
 
-   cout << " ____________________________________________" << endl;
-   cout << "|Welcome to the trig menu!                   |" << endl
-	   << "|Please choose one of the following options: |" << endl // Outputs trig menu options 
-	   << "|1. sin                                      |" << endl
-	   << "|2. cos                                      |" << endl
-	   << "|3. tan                                      |" << endl
-	   << "|4. csc                                      |" << endl
-	   << "|5. sec                                      |" << endl
-	   << "|6. cot                                      |" << endl
-	   << "|____________________________________________|" << endl;
-   cout << "Selection: ";
+	cout << " ____________________________________________" << endl;
+	cout << "|Welcome to the trig menu!                   |" << endl
+		<< "|Please choose one of the following options: |" << endl // Outputs trig menu options 
+		<< "|1. sin                                      |" << endl // Basic UI
+		<< "|2. cos                                      |" << endl
+		<< "|3. tan                                      |" << endl
+		<< "|4. csc                                      |" << endl
+		<< "|5. sec                                      |" << endl
+		<< "|6. cot                                      |" << endl
+		<< "|____________________________________________|" << endl;
+	cout << "Selection: ";
 	cin >> selectionTrig;
-	switch (selectionTrig)
+	switch (selectionTrig) // Used to determine what the user wants to do
 	{
 	case 1: cout << "Please enter a number to find the sin of: "; // Case 1 is for sine
 		cin >> num;
@@ -183,8 +220,8 @@ void trig()
 void expslogs()
 {
 	cout << " ____________________________________________" << endl;
-	cout <<"|Welcome to the logs and exponents menu!     |" << endl
-		<< "|Please choose one of the following options: |" << endl
+	cout << "|Welcome to the logs and exponents menu!     |" << endl
+		<< "|Please choose one of the following options: |" << endl // Basic menu options/UI
 		<< "|1. Log(x)                                   |" << endl
 		<< "|2. ln(x)                                    |" << endl
 		<< "|3. e^(x)                                    |" << endl
@@ -194,7 +231,7 @@ void expslogs()
 	int selectionLE;
 	double num, num1;
 	cin >> selectionLE;
-	switch (selectionLE)
+	switch (selectionLE) // Used to proscess input and do the right funtion
 	{
 	case 1: cout << "Please enter a number to find the log of: ";
 		cin >> num;
