@@ -54,7 +54,7 @@ int main()
 		case 3: cout << " " << endl;
 			multiplication(); // Sends to multiplication function
 			break;
-		case 4: cout << endl << "Please input numbers to divide by each other each separated by enter and when done input 1: " << endl;
+		case 4: cout << endl << "Please input two numbers to divide by each other each separated by space: ";
 			division(); // Sends to division function
 			break;
 		case 5: trig(); // Sends to trig function
@@ -115,7 +115,7 @@ void subtraction()
 
 	long long int sum = 0; for (int i = 0; i < sub.size(); i++) sum += sub[i];
 
-	cout << "Sum: " << firstNum - sum << endl; //Subtracts 
+	cout << "Difference: " << firstNum - sum << endl; //Subtracts 
 }
 void multiplication()
 {
@@ -137,21 +137,17 @@ void multiplication()
 		num *= mult[i];
 	}
 
-	cout << "Sum: " << num << endl; //Outputs the result
+	cout << "Product: " << num << endl; //Outputs the result
 
 }
 void division()
 {
 	double num;
-	double total;
+	double num1;
 
-	cin >> total; // Makes the first input the total to divide from
-	do
-	{
-		cin >> num; // The following are the numbers divided
-		total = total / num;
-	} while (num != 1); // 1 is used to break out of the do/while loop
-	cout << "= " << total << endl;
+	cin >> num >> num1; // Takes both numbers and stores them
+
+	cout << "Quotient: " << num / num1 << endl; // Outputs quotient
 }
 void squareRoot() //Square root of a number
 {
