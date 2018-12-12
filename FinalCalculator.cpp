@@ -23,7 +23,7 @@ int main()
 	char repeat = 'y';
 	while (repeat == 'y') // This loop allows the user to do more than one operation before closing the program
 	{
-		int selection;
+		long selection;
 		double num1, num2;
 
 		cout << "                C++ Calculator                " << endl // Basic UI
@@ -92,7 +92,7 @@ void addition()
 }
 void subtraction()
 {
-	vector<long long int> sub;
+	vector<double> sub;
 	double num;
 	double max;
 	double firstNum;
@@ -117,7 +117,7 @@ void subtraction()
 }
 void multiplication()
 {
-	vector<int> mult;
+	vector<double> mult;
 	double num;
 	double valChoice;
 
