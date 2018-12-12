@@ -71,8 +71,8 @@ int main()
 void addition()
 {
 	vector<double> add;
-	long double num;
-	long double max;
+	double num;
+	double max;
 
 	cout << "How many numbers do you want to add? : "; //Prompts user for the number of values they want to add
 	cin >> max;
@@ -85,7 +85,7 @@ void addition()
 	}
 
 
-	long long int sum = 0; for (int i = 0; i < add.size(); i++) sum += add[i]; //Adds all numbers in the vector together
+	double sum = 0; for (int i = 0; i < add.size(); i++) sum += add[i]; //Adds all numbers in the vector together
 
 	cout << "Sum: " << sum << endl; //Outputs the sum
 
@@ -93,9 +93,9 @@ void addition()
 void subtraction()
 {
 	vector<long long int> sub;
-	long long int num;
-	long long int max;
-	long long int firstNum;
+	double num;
+	double max;
+	double firstNum;
 
 	cout << "What is the number you want to subtract from? :";
 	cin >> firstNum;
@@ -111,15 +111,15 @@ void subtraction()
 	}
 
 
-	long long int sum = 0; for (int i = 0; i < sub.size(); i++) sum += sub[i];
+	double sum = 0; for (int i = 0; i < sub.size(); i++) sum += sub[i];
 
 	cout << "Difference: " << firstNum - sum << endl; //Subtracts 
 }
 void multiplication()
 {
 	vector<int> mult;
-	int num;
-	int valChoice;
+	double num;
+	double valChoice;
 
 	cout << "How many numbers do you want to multiply? : "; //Prompts the user for the number of values they want to multiply together
 	cin >> valChoice;
@@ -131,7 +131,7 @@ void multiplication()
 		mult.push_back(num);
 	}
 
-	int sum = 1; for (int i = 0; (i < mult.size() - 1); i++) //Multiplies all values in the vector together
+	double sum = 1; for (int i = 0; (i < mult.size() - 1); i++) //Multiplies all values in the vector together
 	{
 		num *= mult[i];
 	}
