@@ -3,13 +3,13 @@
 // Comsc-110 Final
 
 #include <iostream>
-#include <cmath> // Allows for more mathmatic tools
+#include <cmath> // Allows for more mathematic tools
 #include <vector>
 #include <numeric>
 
 using namespace std;
 
-void addition(); // These are the functions for all the funtions of the calculator
+void addition(); // These are the functions for all the functions of the calculator
 void subtraction();
 void multiplication();
 void division();
@@ -17,10 +17,6 @@ void trig();
 void squareRoot();
 void expslogs();
 
-vector<double> add; // Used to add/subtract/multiply multiple numbers
-vector<long long int> sub;
-vector<int> mult;
-vector<double> divi;
 
 int main()
 {
@@ -74,6 +70,7 @@ int main()
 
 void addition()
 {
+	vector<double> add;
 	long double num;
 	long double max;
 
@@ -95,6 +92,7 @@ void addition()
 }
 void subtraction()
 {
+	vector<long long int> sub;
 	long long int num;
 	long long int max;
 	long long int firstNum;
@@ -119,6 +117,7 @@ void subtraction()
 }
 void multiplication()
 {
+	vector<int> mult;
 	int num;
 	int valChoice;
 
