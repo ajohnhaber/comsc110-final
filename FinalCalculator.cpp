@@ -1,6 +1,7 @@
 // Andrew Haber
 // Bayley Barreuther
 // Comsc-110 Final
+//------------------------------------------------------
 
 #include <iostream>
 #include <cmath> // Allows for more mathematic tools
